@@ -1,36 +1,39 @@
 <!--index.wxml-->
 
-<view class='search-icon-txt' catchtap='search'>
-  <image class='search-icon' src='/images/search_1.png'></image>
-  <text class='search-txt'>搜索百科文章</text>
-</view>
-
-<view class='main'>
-  <view class='menu'>
-    <block wx:for-items="{{list}}" wx:key="{{item.id}}">
-      <view class='menu_item' data-item='{{item}}' catchtap='tabListener'>
-        <view class='menu_indicate' hidden='{{currentItem.id != item.id}}'></view>
-        <text class="menu_title {{currentItem.id == item.id ? 'menu_title_on' : ''}}">{{item.title}}</text>
-      </view>
-    </block>
+<view class='container'>
+  <view class='search-icon-txt' catchtap='search'>
+    <image class='search-icon' src='/images/search_1.png'></image>
+    <text class='search-txt'>搜索百科文章</text>
   </view>
 
-  <scroll-view scroll-y="true" scroll-top='{{scrollTop}}'>
-    <view class='content'>
-      <block wx:for="{{currentItem.molds}}" wx:for-item="mold" wx:key="mold.id">
-        <view class='content_view_title'>
-          <text class='content_title'>{{mold.title}}</text>
-        </view>
-        <view class='option-layout'>
-          <block wx:for="{{mold.kinds}}" wx:for-item="kind" wx:key="{{kind.id}}">
-            <view class='option-item' data-item='{{kind}}' catchtap='kindListener'>
-              <image class='option-item-image' mode='aspectFit' src="{{kind.img}}" />
-              <text class='option-item-txt'>{{kind.title}}</text>
-            </view>
-          </block>
+  <view class='main'>
+    <view class='menu'>
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class='menu_item' data-item='{{item}}' catchtap='tabListener'>
+          <view class='menu_indicate' hidden='{{currentItem.id != item.id}}'></view>
+          <text class="menu_title {{currentItem.id == item.id ? 'menu_title_on' : ''}}">{{item.title}}</text>
         </view>
       </block>
     </view>
-  </scroll-view>
+
+    <scroll-view class='scrollView' scroll-y="true" scroll-top='{{scrollTop}}'>
+      <view class='content'>
+        <block wx:for="{{currentItem.molds}}" wx:for-item="mold" wx:key="mold.id">
+          <view class='content_view_title'>
+            <text class='content_title'>{{mold.title}}</text>
+          </view>
+          <view class='option-layout'>
+            <block wx:for="{{mold.kinds}}" wx:for-item="kind" wx:key="{{kind.id}}">
+              <view class='option-item' data-item='{{kind}}' catchtap='kindListener'>
+                <image class='option-item-image' mode='aspectFit' src="https://www.bestcircler.com/{{kind.img}}" />
+                <text class='option-item-txt'>{{kind.title}}</text>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+
+  </view>
 
 </view>
