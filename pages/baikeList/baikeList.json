@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "infoViewModal": "../infoView/infoView",
+    "loadmoreViewModal": "../loadmoreView/loadmoreView"
+  },
+  "navigationBarTitleText": "百科",
+  "enablePullDownRefresh": false,
+  "backgroundTextStyle": "black"
+}

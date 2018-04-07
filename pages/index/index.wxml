@@ -15,14 +15,14 @@
     </block>
   </view>
 
-  <scroll-view scroll-y="true">
+  <scroll-view scroll-y="true" scroll-top='{{scrollTop}}'>
     <view class='content'>
-      <block wx:for="{{currentItem.mold}}" wx:for-item="mold" wx:key="mold.id">
+      <block wx:for="{{currentItem.molds}}" wx:for-item="mold" wx:key="mold.id">
         <view class='content_view_title'>
           <text class='content_title'>{{mold.title}}</text>
         </view>
         <view class='option-layout'>
-          <block wx:for="{{mold.kind}}" wx:for-item="kind" wx:key="{{kind.id}}">
+          <block wx:for="{{mold.kinds}}" wx:for-item="kind" wx:key="{{kind.id}}">
             <view class='option-item' data-item='{{kind}}' catchtap='kindListener'>
               <image class='option-item-image' mode='aspectFit' src="{{kind.img}}" />
               <text class='option-item-txt'>{{kind.title}}</text>

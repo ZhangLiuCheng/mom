@@ -1,0 +1,17 @@
+<!--pages/baikeList/baikeList.wxml-->
+
+<infoViewModal id='infoViewModal' modal-bottom='2' modal-msgLoading='加载中' modalMsgEmpty='暂无数据' bind:retry="networkRetry" ></infoViewModal>
+
+<view class="container">
+    <view class='index-bd'>
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="item_bd" data-item='{{item}}' catchtap='detail'>
+
+          <text class="item_bd_title">{{item.message}}</text>
+
+        </view>
+      </block>
+      <loadmoreViewModal id='loadmoreViewModal' bind:loadmore="loadmoreRetry"></loadmoreViewModal>
+    </view>
+
+</view>

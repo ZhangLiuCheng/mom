@@ -1,0 +1,34 @@
+/* pages/baikeList/baikeList.wxss */
+
+.container {
+  background-color: #ffffff; 
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.index-bd {
+  padding-bottom: 30rpx;
+}
+
+.item_bd {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-top: 20rpx solid rgba(125, 125, 125, 0.1); 
+}
+
+.item_bd_title {
+  font-size: 30rpx;
+  color: #404040;
+  margin-top: 20rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
