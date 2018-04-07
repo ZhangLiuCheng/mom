@@ -1,6 +1,11 @@
 <!--index.wxml-->
-<view class='main'>
 
+<view class='search-icon-txt' catchtap='search'>
+  <image class='search-icon' src='/images/search_1.png'></image>
+  <text class='search-txt'>搜索百科文章</text>
+</view>
+
+<view class='main'>
   <view class='menu'>
     <block wx:for-items="{{list}}" wx:key="{{item.id}}">
       <view class='menu_item' data-item='{{item}}' catchtap='tabListener'>
@@ -18,7 +23,7 @@
         </view>
         <view class='option-layout'>
           <block wx:for="{{mold.kind}}" wx:for-item="kind" wx:key="{{kind.id}}">
-            <view class='option-item'>
+            <view class='option-item' data-item='{{kind}}' catchtap='kindListener'>
               <image class='option-item-image' mode='aspectFit' src="{{kind.img}}" />
               <text class='option-item-txt'>{{kind.title}}</text>
             </view>

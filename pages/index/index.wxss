@@ -1,8 +1,34 @@
 /**index.wxss**/
+.search-icon-txt {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  height: 70rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background-color: rgba(125, 125, 125, 0.1);
+  border-radius: 30rpx;
+}
+
+.search-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+}
+
+.search-txt {
+  flex: 1;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  color: #AAAAAA
+}
 
 .main {
   width: 100vw;
   height: 100vh;
+  margin-top: 20rpx;
   display: flex;
   flex-direction: row;
   border-top: 2rpx solid rgba(125, 125, 125, 0.1);

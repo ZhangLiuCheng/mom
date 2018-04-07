@@ -30,6 +30,11 @@ Page({
                 'id': '4',
                 'title': '脱畸全套',
                 'img': 'https://www.bestcircler.com/pic/formal/basic/2018/03/26/fb58d9d5-46f3-452f-b4d2-23022ceeab37.jpg'
+              },
+              {
+                'id': '5',
+                'title': '脱畸全套',
+                'img': 'https://www.bestcircler.com/pic/formal/basic/2018/03/26/fb58d9d5-46f3-452f-b4d2-23022ceeab37.jpg'
               }
             ]
           },
@@ -153,10 +158,21 @@ Page({
     })
   },
 
+  search: function () {
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
+
   tabListener: function (res) {
     let item = res.currentTarget.dataset.item
     this.setData({
       currentItem: item
     })
+  },
+
+  kindListener: function (res) {
+    let kind = res.currentTarget.dataset.item
+    console.log(kind)
   }
 })
