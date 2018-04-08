@@ -1,6 +1,6 @@
 //index.js
 
-var http = require('../../utils/http.js')
+const http = require('../../utils/http.js')
 
 Page({
   data: {
@@ -10,14 +10,8 @@ Page({
   },
 
   onLoad: function () {
-    let item = this.data.list[0]
-    this.setData({
-      currentItem: item
-    })
-
-    var that = this
+    const that = this
     http.requestMom(function (success, result) {
-      console.log(result)
       if (success) {
         let item = result[0]
         that.setData({
@@ -45,7 +39,7 @@ Page({
   kindListener: function (res) {
     let kind = res.currentTarget.dataset.item
     wx.navigateTo({
-      url: '../baikeList/baikeList',
+      url: '../baikeList/baikeList?id=' + kind.id,
     })
   }
 })

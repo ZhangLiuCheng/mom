@@ -3,6 +3,6 @@
     "infoViewModal": "../infoView/infoView"
   },
   "navigationBarTitleText": "百科",
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "backgroundTextStyle": "black"
 }
