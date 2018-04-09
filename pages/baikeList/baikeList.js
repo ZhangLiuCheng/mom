@@ -1,6 +1,6 @@
 // pages/baikeList/baikeList.js
 
-const http = require('../../utils/http.js')
+let http = require('../../utils/http.js')
 
 Page({
   data: {
@@ -10,6 +10,9 @@ Page({
 
   onLoad: function (options) {
       this.data.kindId = options.id
+      wx.setNavigationBarTitle({
+        title: options.title,
+      })
   },
 
   onReady: function () {

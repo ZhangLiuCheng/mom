@@ -22,6 +22,10 @@ Page({
     })
   },
 
+  onShareAppMessage: function () {
+
+  },
+
   search: function () {
     wx.navigateTo({
       url: '../search/search',
@@ -39,7 +43,7 @@ Page({
   kindListener: function (res) {
     let kind = res.currentTarget.dataset.item
     wx.navigateTo({
-      url: '../baikeList/baikeList?id=' + kind.id,
+      url: '../baikeList/baikeList?id=' + kind.id + '&title=' + kind.title,
     })
   }
 })

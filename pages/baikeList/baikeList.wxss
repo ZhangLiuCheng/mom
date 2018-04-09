@@ -43,13 +43,13 @@
 }
 
 .item_bd_extra_title {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: #AAAAAA;
   flex: 1;
 }
 
  .item_bd_extra_count {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: #AAAAAA;
   margin-right: 20rpx;
 } 
@@ -58,4 +58,5 @@
   width: 220rpx;
   height: 130rpx;
   margin-left: 20rpx;
+  border-radius: 10rpx;
 }

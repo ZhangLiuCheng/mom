@@ -15,6 +15,12 @@ module.exports = {
   queryItem: host + 'queryItem',
 
   /**
+  * 查询详情
+  * itemId
+  */
+  queryDetail: host + 'queryDetail',
+
+  /**
    * 热门关键词
    * token
    */

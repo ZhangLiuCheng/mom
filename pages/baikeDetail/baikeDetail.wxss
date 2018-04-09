@@ -1,1 +1,72 @@
 /* pages/baikeDetail/baikeDetail.wxss */
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.brief_bg {
+  margin: 20rpx;
+  padding: 20rpx;
+  background-color: #f4f8fb;
+}
+
+.brief {
+  font-size: 33rpx;
+}
+
+.img {
+  margin-top: 20rpx;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.mod-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  height: 26px;
+  line-height: 26px;
+  color: #000;
+  border-left: 30rpx solid #da7c0c;
+  padding-left: 20rpx;
+}
+
+.mod_brief_bg {
+  padding-bottom: 50rpx;
+  padding-top: 20rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+
+.mod-brief {
+  font-size: 32rpx;
+  line-height: 50rpx;
+  text-indent: 50rpx;
+  color: #3d464d;
+}
+
+.zhishi-bg {
+  padding-left: 30rpx;
+  padding-right: 10rpx;  
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  display: grid;
+  grid-template-columns: 47% 47%;   
+  /* grid-gap: 10rpx;  */
+  align-items: center;
+  justify-content: space-around; 
+}
+
+.zhishi-title {
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #da7c0c;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
