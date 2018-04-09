@@ -4,15 +4,21 @@ let http = require('../../utils/http.js')
 
 Page({
   data: {
+    momTitle: '',
+    moldTitle: '',
     kindId: '',
     list: []
   },
 
   onLoad: function (options) {
-      this.data.kindId = options.id
-      wx.setNavigationBarTitle({
-        title: options.title,
-      })
+    this.data.kindId = options.id
+    this.setData({
+      momTitle : options.momTitle,
+      moldTitle: options.moldTitle
+    })
+    wx.setNavigationBarTitle({
+      title: options.title,
+    })
   },
 
   onReady: function () {
@@ -25,7 +31,7 @@ Page({
   },
 
   onShareAppMessage: function () {
-  
+
   },
 
   networkRetry: function () {
@@ -39,13 +45,14 @@ Page({
     })
   },
 
-  requestItems: function() {
+  requestItems: function () {
     var that = this
-    if (this.data.length == 0) {
+    if (this.data.list.length == 0) {
       this.infoViewModal.showLoadingView()
     }
     http.requestItems(this.data.kindId, function (success, result) {
       wx.stopPullDownRefresh()
+      console.log(result)
       if (success) {
         if (result.length <= 0) {
           that.infoViewModal.showEmptyView('暂无数据')

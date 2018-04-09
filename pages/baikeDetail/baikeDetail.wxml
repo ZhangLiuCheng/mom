@@ -5,21 +5,25 @@
   <view class='brief_bg'>
     <text class='brief'>{{detail.summary}}</text>
   </view>
+
   <image class='img' mode='widthFix' src='{{detail.img}}' lazy-load='true'></image>
 
-  <block wx:for-items="{{detail.detailMods}}" wx:key="{{item.id}}">
-    <view data-item='{{item}}'>
-      <text class="mod-title">{{item.title}}</text>
-      <view class='mod_brief_bg'>
-        <rich-text class='mod-brief' nodes='{{item.brief}}'></rich-text>
+
+  <view class='mod'>
+    <block wx:for-items="{{detail.detailMods}}" wx:key="{{item.id}}">
+      <view data-item='{{item}}'>
+        <text class="mod-title">{{item.title}}</text>
+        <view class='mod_brief_bg'>
+          <rich-text class='mod-brief' nodes='{{item.brief}}'></rich-text>
+        </view>
       </view>
-    </view>
-  </block>
+    </block>
+  </view>
 
   <!-- 相关百科  -->
-  <text class="mod-title">相关百科</text>
+  <text class="mod-title" hidden='{{detail.relateBaikes == 0}}'>相关百科</text>
 
-  <view class='zhishi-bg' >
+  <view class='zhishi-bg'>
     <block wx:for-items="{{detail.relateBaikes}}" wx:key="{{item.id}}">
       <text class='zhishi-title' data-item='{{item}}' catchtap='detail'>· {{item.title}}</text>
     </block>

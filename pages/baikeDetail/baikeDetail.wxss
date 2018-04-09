@@ -2,7 +2,7 @@
 
 .container {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
 }
@@ -14,7 +14,9 @@
 }
 
 .brief {
-  font-size: 33rpx;
+  font-size: 32rpx;
+  color: #666;
+  font-weight: bold;
 }
 
 .img {
@@ -22,6 +24,13 @@
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+.mod {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: 40rpx;
 }
 
 .mod-title {
@@ -50,19 +59,20 @@
 
 .zhishi-bg {
   padding-left: 30rpx;
-  padding-right: 10rpx;  
+  padding-right: 10rpx;
   padding-bottom: 20rpx;
   padding-top: 20rpx;
   display: grid;
-  grid-template-columns: 47% 47%;   
-  /* grid-gap: 10rpx;  */
-  align-items: center;
-  justify-content: space-around; 
+  grid-template-columns: 47% 47%;
+  grid-gap: 20rpx;
+  /* align-items: center;
+  justify-content: space-around;  */
 }
 
 .zhishi-title {
   font-size: 30rpx;
-  line-height: 60rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   color: #da7c0c;
   display: -webkit-box;
   word-break: break-all;

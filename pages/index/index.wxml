@@ -24,7 +24,7 @@
           </view>
           <view class='option-layout'>
             <block wx:for="{{mold.kinds}}" wx:for-item="kind" wx:key="{{kind.id}}">
-              <view class='option-item' data-item='{{kind}}' catchtap='kindListener'>
+              <view class='option-item' data-item='{{kind}}' data-moldTitle='{{mold.title}}' catchtap='kindListener'>
                 <image class='option-item-image' mode='aspectFit' src="{{kind.img}}" />
                 <text class='option-item-txt'>{{kind.title}}</text>
               </view>

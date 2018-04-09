@@ -22,13 +22,12 @@ module.exports = {
 
   /**
    * 热门关键词
-   * token
    */
-  searchHotKeyword: host + 'hotSearch/query',
+  searchHotKeyword: host + 'queryHots',
 
   /**
    * 搜索列表
    * keyword
    */
-  searchList: host + 'news/search',
+  searchList: host + 'queryKeyword',
 }

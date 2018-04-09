@@ -32,51 +32,28 @@ Page({
   
   },
 
+  detail: function (res) {
+    let item = res.currentTarget.dataset.item
+    wx.navigateTo({
+      url: '../baikeDetail/baikeDetail?id=' + item.id + "&title=" + item.title,
+    })
+  },
+  
   networkRetry: function () {
-    getApp().print("重试")
     this.requestSearchList()
   },
 
   onSearchCancel: function (e) {
-    console.log("onSearchCancel")
     if (this.data.list.length == 0) {
       wx.navigateBack()
     }
   },
 
   onSearchTo: function (e) {
-    console.log("onSearchTo ")
     this.data.keyword = e.detail
     this.data.pageIndex = 0
     this.requestSearchList()
   },
-
-  // 点赞
-  like: function (res) {
-    let item = res.currentTarget.dataset.item
-    console.log(item)
-    var collectType = item.isCollect + 1;
-    this.requestCollect(item.id, collectType)
-
-    let newList = this.data.list
-    // 更新列表数据
-    for (var i = 0; i < newList.length; i++) {
-      if (newList[i].id == item.id) {
-        if (newList[i].isCollect == 0) {
-          newList[i].isCollect = 1
-          newList[i].supportCount++
-        } else {
-          newList[i].isCollect = 0
-          newList[i].supportCount--
-        }
-        break
-      }
-    }
-    this.setData({
-      list: newList
-    })
-  },
-
 
   refreshNewsData: function (data) {
     var newList = []
@@ -146,33 +123,5 @@ Page({
         that.loadmoreViewModal.showErrorView()
       }
     }
-  },
-
-  requestCollect: function (newsId, collectType) {
-    var that = this
-    var app = getApp()
-    var userToken = getApp().globalData.userToken
-
-    wx.request({
-      url: constants.newsCollection,
-      method: "POST",
-      data: {
-        token: userToken,
-        newsId: newsId,
-        collectType: collectType,
-      },
-      header: {
-        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
-      },
-      success: function (res) {
-        getApp().print(res)
-        if (res.statusCode == 200 && res.data.code == 0) {
-          var list = res.data.data;
-        } else {
-        }
-      },
-      fail: function (res) {
-      }
-    })
   }
 })
