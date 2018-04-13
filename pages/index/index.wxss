@@ -105,12 +105,10 @@
   transform: translate(-50%, 0);
 }
 
-.option-layout {
-  /* background-color: #e0e0e0;      */
+/* .option-layout {
   width: 88%;
   height: auto;
   margin-left: 6%;
-  /* padding-bottom: 50rpx; */
   padding-top: 50rpx;
   display: grid;
   grid-template-columns: 160rpx 160rpx 160rpx;   
@@ -120,13 +118,31 @@
 }
 
 .option-item {
-  /* background-color: rebeccapurple;   */
-  /* width: 150rpx; */
+  height: 220rpx; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.option-layout {
+  width: 88%;
+  height: auto;
+  margin-left: 6%;
+  padding-top: 50rpx;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
+.option-item {
+  flex: 0 0 33%;
   height: 220rpx; 
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+
 
 .option-item-image {
   width: 120rpx;
