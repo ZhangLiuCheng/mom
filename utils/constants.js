@@ -1,5 +1,5 @@
-// var host = 'http://192.168.1.105:8080/mom/v1/'
-var host = 'https://www.bestcircler.com/mom/v1/'
+
+const host = 'https://mom.bestcircler.com/v1/'
 
 module.exports = {
 
