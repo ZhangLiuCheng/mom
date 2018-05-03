@@ -1,6 +1,8 @@
 //index.js
 
-const http = require('../../utils/http.js')
+let http = require('../../utils/http.js')
+let audio = require('../../utils/audio.js')
+
 
 Page({
   data: {
@@ -24,17 +26,25 @@ Page({
     })
   },
 
+  onUnload: function () {
+    this.unload = true;
+    audio.freeAllAudio();
+  },
+
+
   onShareAppMessage: function () {
 
   },
 
   search: function () {
+    audio.playMenuAudio();
     wx.navigateTo({
       url: '../search/search',
     })
   },
 
   tabListener: function (res) {
+    audio.playMenuAudio();
     let item = res.currentTarget.dataset.item
     this.setData({
       scrollTop: 0,
@@ -44,6 +54,7 @@ Page({
   },
 
   kindListener: function (res) {
+    audio.playMenuAudio();
     let momTitle = this.data.currentMomTitle
     let kind = res.currentTarget.dataset.item
     let moldTitle = res.currentTarget.dataset.moldtitle

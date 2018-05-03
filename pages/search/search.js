@@ -1,6 +1,7 @@
 // pages/search/search.js
 
-var constants = require('../../utils/constants.js')
+let constants = require('../../utils/constants.js')
+let audio = require('../../utils/audio.js')
 
 Page({
 
@@ -33,6 +34,7 @@ Page({
   },
 
   detail: function (res) {
+    audio.playMenuAudio();
     let item = res.currentTarget.dataset.item
     wx.navigateTo({
       url: '../baikeDetail/baikeDetail?id=' + item.id + "&title=" + item.title,
@@ -50,6 +52,7 @@ Page({
   },
 
   onSearchTo: function (e) {
+    audio.playMenuAudio();
     this.data.keyword = e.detail
     this.data.pageIndex = 0
     this.requestSearchList()
