@@ -2,6 +2,7 @@
 
 let http = require('../../utils/http.js')
 let audio = require('../../utils/audio.js')
+let util = require('../../utils/util.js')
 
 Page({
   data: {
@@ -32,7 +33,7 @@ Page({
   },
 
   onShareAppMessage: function () {
-
+    return util.shareData();
   },
 
   networkRetry: function () {
@@ -54,7 +55,6 @@ Page({
     }
     http.requestItems(this.data.kindId, function (success, result) {
       wx.stopPullDownRefresh()
-      console.log(result)
       if (success) {
         if (result.length <= 0) {
           that.infoViewModal.showEmptyView('暂无数据')

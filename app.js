@@ -6,7 +6,7 @@ App({
   },
 
   print: function (res) {
-    console.log(res)
+    // console.log(res)
   },
 
   onLaunch: function () {

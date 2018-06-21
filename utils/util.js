@@ -44,24 +44,16 @@ Array.prototype.remove = function (val) {
   }
 };
 
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+var shareData = function () {
+  return {
+    title: '孕妈妈必备的宝典！',
+    path: '/pages/index/index',
+    imageUrl: '/images/icon.png'
+  }
 }
 
 module.exports = {
   showToast: showToast,
   formatNewsType: formatNewsType,
-  formatTime: formatTime
+  shareData: shareData
 }

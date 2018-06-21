@@ -2,6 +2,7 @@
 
 let constants = require('../../utils/constants.js')
 let audio = require('../../utils/audio.js')
+let util = require('../../utils/util.js')
 
 Page({
 
@@ -30,7 +31,7 @@ Page({
   },
 
   onShareAppMessage: function () {
-  
+    return util.shareData();
   },
 
   detail: function (res) {

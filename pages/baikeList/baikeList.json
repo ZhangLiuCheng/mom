@@ -2,7 +2,7 @@
   "usingComponents": {
     "infoViewModal": "../infoView/infoView"
   },
-  "navigationBarTitleText": "百科",
+  "navigationBarTitleText": "",
   "enablePullDownRefresh": true,
   "backgroundTextStyle": "black"
 }
